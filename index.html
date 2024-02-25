@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice_about_promisses</title>
+
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-align: center;
+            margin-top: 50px;
+        
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 50px;
+            border: 5px solid rgb(87, 48, 48);
+            box-shadow: 10px 25px 50px pink;
+            border-radius: 5px;
+            width: 500px;
+            height: 500px;
+            margin: auto ;
+            background: linear-gradient(to bottom, #7FFFD4, #00CED1);
+             /* Dégradé de couleurs */
+             transition: 0.5s;
+             cursor: pointer;
+           
+        }
+        .container:hover{
+            border-radius: 50%;
+            border-color: rgb(99, 5, 5);
+            box-shadow: 10px 25px 500px rgb(156, 9, 33);
+
+        }
+        H1{
+            /* visibility: visible; */
+            margin: 10px 0;
+            cursor: pointer;
+            color: rgb(99, 5, 5);
+           
+            transition: 5s ease-in-out;
+
+        }
+        H1:hover{
+            color: rgb(163, 31, 31);
+            word-spacing: 6px;
+        }
+    </style>
+</head>
+<body>
+        
+    <div class="container">
+        <h1>Have a great DAY!!</h1><br>
+        <!-- <H1 id="title1" style="visibility: hidden">Title 1</H1>
+        <H1 id="title2" style="visibility: hidden">Title 2</H1>
+        <H1 id="title3" style="visibility: hidden">Title 3</H1>
+        <H1 id="title4" style="visibility: hidden">Title 4</H1> -->
+        <br id="title1" style="visibility: hidden">"The only way to do great work is to love what you do."</br> - Steve Jobs</p>
+        <p id="title2" style="visibility: hidden">"In the end, we only regret the chances we didn't take."</br> - Lewis Carroll</p>
+        <p id="title3" style="visibility: hidden">"The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart." </br>- Helen Keller</p>
+        <p id="title4" style="visibility: hidden">"The future belongs to those who believe in the beauty of their dreams." </br>- Eleanor Roosevelt</p>
+    </div>
+
+    <script>
+
+        // setTimeout(function(){
+        //     document.getElementById("title1").style.visibility="visible"
+            
+
+        //      setTimeout(function(){
+        //      document.getElementById("title2").style.visibility="visible"
+            
+
+        //     setTimeout(function(){
+        //     document.getElementById("title3").style.visibility="visible"
+            
+
+        //     setTimeout(function(){
+        //     document.getElementById("title4").style.visibility="visible"
+            
+        // }, 1000);
+        // }, 1000);
+        // }, 1000);
+        // }, 1000);
+
+        new Promise((resolve, reject)=>{
+            setTimeout(() => {
+                document.getElementById("title1").style.visibility="visible"
+                resolve() 
+            }, 1000);
+        })
+
+        .then(()=>{
+            return new Promise((resolve, reject)=>{
+                   setTimeout(() => {
+                
+                          document.getElementById("title2").style.visibility="visible"
+                          resolve() 
+                
+                    }, 1000);
+        })
+        })
+
+        .then(()=>{
+
+            return new Promise((resolve, reject)=>{
+                   setTimeout(() => {
+                
+                          document.getElementById("title3").style.visibility="visible"
+                          resolve() 
+                    }, 1000);
+        })
+        })
+
+        .then(()=>{
+           
+                   setTimeout(() => {
+                
+                          document.getElementById("title4").style.visibility="visible"
+                
+                    }, 1000);
+       
+        })
+        .catch((error)=>{
+            console.log(" error from"+error)
+        })
+
+
+
+    </script>
+</body>
+</html>

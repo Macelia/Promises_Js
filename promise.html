@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>les promesses en Js</title>
+</head>
+<body>
+    <h1>Promise :</h1>
+    <p id="Demo"></p>
+
+    <script>
+
+        function MyDisplayer(x){
+            document.getElementById("Demo").innerHTML=x;
+        }
+
+        let MyPromise = new Promise(function(MyResult, MyReject){
+            let x = 0;
+            (x===5) ? MyResult("Success"): MyReject("Error");
+        })
+
+        // MyPromise.then(
+        //     function(Error){
+        //         MyDisplayer(Error);
+        //     },
+        //     function(value){
+        //         MyDisplayer(value);
+        //     }
+
+        // )
+
+        const ResultatPromise = async() => {
+            try{
+                const value =await MyPromise;
+                MyDisplayer(value);
+            }
+            catch(Error){
+                MyDisplayer(Error);
+            }
+        }
+        ResultatPromise();
+
+    </script>
+    
+</body>
+</html>
